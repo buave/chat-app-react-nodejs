@@ -1,10 +1,37 @@
-version: '3.8'
 services:
-  front:
+  web:
     build: ./public
     ports:
       - 3000:3000
+    restart: always
+    depends_on:
+      - api
+    networks:
+      - front
+
   api:
     build: ./server
     ports:
       - 5000:5000
+    restart: always
+    depends_on:
+      - db
+    networks:
+      - front
+      - back
+
+  db:
+    image: mongo
+    restart: always
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - back
+
+
+networks:
+  front:
+  back:
+
+volumes:
+  mongo-data:
