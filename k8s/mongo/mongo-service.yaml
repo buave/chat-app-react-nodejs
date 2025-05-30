@@ -10,5 +10,5 @@ spec:
     - protocol: TCP
       port: 27017
       targetPort: 27017
-  clusterIP: 10.152.183.1  # Headless service for direct access (optional)
+  clusterIP: None  # Headless service for direct access (optional)
 
