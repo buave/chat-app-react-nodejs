@@ -16,7 +16,7 @@ spec:
       containers:
       - name: frontend
         image: web:latest  # Remplacez par le nom réel
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
         env:
