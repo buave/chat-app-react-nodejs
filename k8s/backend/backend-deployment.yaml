@@ -16,7 +16,7 @@ spec:
       containers:
       - name: backend
         image: api:latest  # Remplacez par le nom réel
-        imagePullPolicy: ifNotPresent
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
         env:
